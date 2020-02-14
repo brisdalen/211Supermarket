@@ -5,6 +5,7 @@
  */
 package supermarket;
 
+import eventsim.Constants;
 import eventsim.Event;
 import eventsim.EventSim;
 import java.util.ArrayList;
@@ -22,8 +23,8 @@ public class SuperMarket {
         supern.startSim();
     }
 
-    public static final int NUM_CHECKOUTS = 1;
-    public static final int NUM_CUSTOMERS = 4;
+    private int numOfCheckouts = Constants.SM_NUM_CHECKOUTS;
+    private int numOfCustomers = Constants.SM_NUM_CUSTOMERS;
 
     Checkout[] checkouts;
     List<Customer> customers;
@@ -31,12 +32,12 @@ public class SuperMarket {
 
 
     public SuperMarket() {
-        checkouts = new Checkout[NUM_CHECKOUTS];
-        for (int i = 0; i < NUM_CHECKOUTS; i++)
+        checkouts = new Checkout[numOfCheckouts];
+        for (int i = 0; i < numOfCheckouts; i++)
             checkouts[i] = new Checkout(this, i);
         customers = new ArrayList<>();
         init = new ArrayList<Event>();
-        for (int i = 0; i < NUM_CUSTOMERS; i++) {
+        for (int i = 0; i < numOfCustomers; i++) {
             Customer c = new Customer(this, i);
             init.add(new BeginShoppingEvent(c));
             customers.add(c);
