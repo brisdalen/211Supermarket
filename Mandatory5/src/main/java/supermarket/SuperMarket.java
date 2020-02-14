@@ -4,7 +4,6 @@
  * and open the template in the editor.
  */
 package supermarket;
-
 import eventsim.Constants;
 import eventsim.Event;
 import eventsim.EventSim;
@@ -23,8 +22,10 @@ public class SuperMarket {
         supern.startSim();
     }
 
+
     private int numOfCheckouts = Constants.SM_NUM_CHECKOUTS;
     private int numOfCustomers = Constants.SM_NUM_CUSTOMERS;
+
 
     Checkout[] checkouts;
     List<Customer> customers;
@@ -32,12 +33,14 @@ public class SuperMarket {
 
 
     public SuperMarket() {
+
         checkouts = new Checkout[numOfCheckouts];
         for (int i = 0; i < numOfCheckouts; i++)
             checkouts[i] = new Checkout(this, i);
         customers = new ArrayList<>();
         init = new ArrayList<Event>();
         for (int i = 0; i < numOfCustomers; i++) {
+
             Customer c = new Customer(this, i);
             init.add(new BeginShoppingEvent(c));
             customers.add(c);
