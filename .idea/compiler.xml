@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="CompilerConfiguration">
+    <bytecodeTargetLevel>
+      <module name="m2-eventism.eventsim.main" target="1.8" />
+      <module name="m2-eventism.eventsim.test" target="1.8" />
+      <module name="m2-eventsim.main" target="1.8" />
+      <module name="m2-eventsim.test" target="1.8" />
+    </bytecodeTargetLevel>
+  </component>
+</project>
