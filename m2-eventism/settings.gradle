@@ -1,3 +1,0 @@
-includeFlat 'Mandatory5'
-findProject(':Mandatory5')?.name = 'eventsim'
-
