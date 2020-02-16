@@ -10,4 +10,9 @@ public class Constants {
     // TODO: trekke fra nok varer til å være innenfor max shopping time hvis antall varer * time per product blir for høyt
     public static final int CUSTOMER_MAX_SHOPPING_TIME = 10800;
     public static final int TIME_PER_PRODUCT = 90;
+
+    //Checkout
+    public static final int PROD_DURATION = 2;
+    public static final int PAY_DURATION = 10;
+
 }

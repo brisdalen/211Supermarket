@@ -27,7 +27,7 @@ public class SuperMarket {
     private int numOfCustomers = Constants.SM_NUM_CUSTOMERS;
 
 
-    Checkout[] checkouts;
+    Checkout[] checkouts; //Todo: burde checkout være en Array??
     List<Customer> customers;
     List<Event> init;
 
