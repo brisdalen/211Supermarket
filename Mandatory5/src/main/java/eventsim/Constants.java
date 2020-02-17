@@ -18,8 +18,8 @@ public class Constants {
     /**
      * ANSI strings for formating print statements with color
      */
-    // --------- Forgrunnsfarger ---------
     public static final String ANSI_RESET = "\u001B[0m";
+    // --------- Forgrunnsfarger ---------
     public static final String ANSI_BLACK = "\u001B[30m";
     public static final String ANSI_RED = "\u001B[31m";
     public static final String ANSI_GREEN = "\u001B[32m";
@@ -28,6 +28,15 @@ public class Constants {
     public static final String ANSI_PURPLE = "\u001B[35m";
     public static final String ANSI_CYAN = "\u001B[36m";
     public static final String ANSI_WHITE = "\u001B[37m";
+    // --------- Forgrunnsfarger ekstra lys ---------
+    public static final String ANSI_BRIGHT_BLACK = "\u001b[30;1m";
+    public static final String ANSI_BRIGHT_RED = "\u001b[31;1m";
+    public static final String ANSI_BRIGHT_GREEN = "\u001b[32;1m";
+    public static final String ANSI_BRIGHT_YELLOW = "\u001b[33;1m";
+    public static final String ANSI_BRIGHT_BLUE = "\u001b[34;1m";
+    public static final String ANSI_BRIGHT_MAGENTA = "\u001b[35;1m";
+    public static final String ANSI_BRIGHT_CYAN = "\u001b[36;1m";
+    public static final String ANSI_BRIGHT_WHITE = "\u001b[37;1m";
     // --------- Bakgrunnsfarger ---------
     public static final String ANSI_BLACK_BACKGROUND = "\u001B[40m";
     public static final String ANSI_RED_BACKGROUND = "\u001B[41m";

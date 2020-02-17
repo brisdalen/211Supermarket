@@ -17,15 +17,12 @@ public class Checkout {
     private int prodDuration = Constants.PROD_DURATION;
     // amount of time to pay
     private int payDuration = Constants.PAY_DURATION;
-    //total time for checkout = PAY_DURATION + PROD_DURATION*customer.numProd
     //todo: blir nullpoint i constructor pga customer finnes ikke når checkout opprettes. -> fiks??
     Customer customer;
-    //private int totalDuration = prodDuration + payDuration * customer.numProducts;
+    //private int totalDuration = payDuration + prodDuration * customer.numProducts;
 
     SuperMarket shop;
     String name;
-
-
 
     public Checkout(SuperMarket shop, int i) {
         this.shop = shop;
