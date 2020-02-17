@@ -11,6 +11,10 @@ public class Constants {
     public static final int CUSTOMER_MAX_SHOPPING_TIME = 10800;
     public static final int TIME_PER_PRODUCT = 90;
 
+    //Checkout
+    public static final int PROD_DURATION = 2;
+    public static final int PAY_DURATION = 10;
+
     /**
      * ANSI strings for formating print statements with color
      */
@@ -33,4 +37,5 @@ public class Constants {
     public static final String ANSI_PURPLE_BACKGROUND = "\u001B[45m";
     public static final String ANSI_CYAN_BACKGROUND = "\u001B[46m";
     public static final String ANSI_WHITE_BACKGROUND = "\u001B[47m";
+  
 }
