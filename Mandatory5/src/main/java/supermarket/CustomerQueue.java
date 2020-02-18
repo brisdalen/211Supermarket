@@ -1,8 +1,10 @@
 package supermarket;
 
-import java.util.LinkedList;
+import java.util.PriorityQueue;
 
 public class CustomerQueue {
 
-    private LinkedList<Customer> customers;
+    private PriorityQueue<Customer> customers;
+
+
 }

@@ -30,16 +30,13 @@ public class EventSim {
     int clock;
     Random random;
 
-
     public static EventSim getInstance() {
         return theSim;
     }
 
-
     public static int getClock() {
         return theSim.clock;
     }
-
 
     /**
      * Draw a random number in the interval min-max
@@ -52,12 +49,10 @@ public class EventSim {
         return min + theSim.random.nextInt(max - min);
     }
 
-
     public EventSim() {
         eventQueue = new PriorityQueue<>(new EventTimeComparator());
         random = new Random(42);
     }
-
 
     /**
      * Prepare the simulation by adding a list of "start" events
@@ -69,13 +64,11 @@ public class EventSim {
             eventQueue.add(e);
     }
 
-
     public void addEvent(Event e) {
         if (null == e)
             return;
         eventQueue.add(e);
     }
-
 
     /**
      * Run the simulation. Advances the time (clock) to the time when the next

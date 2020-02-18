@@ -8,6 +8,8 @@ package supermarket;
 
 import eventsim.Constants;
 
+import java.util.PriorityQueue;
+
 /**
  *
  * @author evenal
@@ -20,6 +22,7 @@ public class Checkout {
     //todo: blir nullpoint i constructor pga customer finnes ikke når checkout opprettes. -> fiks??
     Customer customer;
     //private int totalDuration = payDuration + prodDuration * customer.numProducts;
+    PriorityQueue<Customer> customers;
 
     SuperMarket shop;
     String name;
@@ -27,5 +30,7 @@ public class Checkout {
     public Checkout(SuperMarket shop, int i) {
         this.shop = shop;
         this.name = "Checkout" + i;
+
+        customers = new PriorityQueue<>();
     }
 }
