@@ -15,19 +15,28 @@ public class LookForCheckoutEvent extends Event {
     @Override
     public Event happen() {
 
-        // Hvis det skjer noe galt returneres en error event
-        Event event = ErrorEvent.getInstance(getTimeAfterLooking4Q());
+        Checkout[] checkouts = customer.shop.getCheckouts();
 
-        for(Checkout c : customer.shop.getCheckouts()) {
-            if(c.customers.size() > 0) {
-                event = new JoinQEvent(getTimeAfterLooking4Q(), c, customer);
-            } else {
+        int i = 0;
+        int smallesQIndex = i;
+        int smallesQLength = checkouts[i].customers.size();
+
+        for(Checkout c : checkouts) {
+
+            if(c.customers.size() == 0) {
                 // hvis ingen kø, gå direkte til å betale
-                event = new CheckoutEvent(getTimeAfterLooking4Q(), c, customer);
+                return new CheckoutEvent(getTimeAfterLooking4Q(), c, customer);
             }
+
+            if(c.customers.size() < smallesQLength) {
+                smallesQLength = c.customers.size();
+                smallesQIndex = i;
+            }
+
+            i++;
         }
 
-        return event;
+        return new JoinQEvent(getTimeAfterLooking4Q(), checkouts[smallesQIndex], customer);
     }
 
     private int getTimeAfterLooking4Q() {

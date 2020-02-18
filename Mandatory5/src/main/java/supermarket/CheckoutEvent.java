@@ -8,9 +8,10 @@ public class CheckoutEvent extends Event {
 
     public CheckoutEvent(int time, Checkout checkout, Customer customer) {
         super(time);
+        //TODO: Når en person er i kassa allerede, må h@n få bli ferdig først, før du bytter kunde
         this.customer = customer;
         checkout.customer = customer;
-        throw new UnsupportedOperationException("Not yet implemented");
+        //throw new UnsupportedOperationException("Not yet implemented");
     }
 
     @Override
