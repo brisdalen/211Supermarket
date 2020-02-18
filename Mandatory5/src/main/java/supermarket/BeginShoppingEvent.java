@@ -26,7 +26,6 @@ public class BeginShoppingEvent extends Event {
     @Override
     public Event happen() {
         System.out.println(Constants.ANSI_BRIGHT_BLUE + "begin shopping time: " + EventSim.getClock());
-        //TODO: legge til LookForCheckoutEvent
         if(customer.numProducts > 0) {
             return new LookForCheckoutEvent(customer);
         } else {
