@@ -40,10 +40,12 @@ public class SuperMarket {
         init = new ArrayList<Event>();
 
         // Tester en kunde som ikke handler noen ting
+        /*
         Customer test = new Customer(this, 600);
         test.changeNumOfProdcuts(0);
         init.add(new BeginShoppingEvent(test));
         customers.add(test);
+        */
 
         for (int i = 0; i < numOfCustomers; i++) {
             Customer c = new Customer(this, i);

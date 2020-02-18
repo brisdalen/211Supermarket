@@ -3,7 +3,7 @@ package eventsim;
 public class Constants {
     public static final int SM_NUM_CHECKOUTS = 1;
     // default value: 4
-    public static final int SM_NUM_CUSTOMERS = 1;
+    public static final int SM_NUM_CUSTOMERS = 3;
 
     public static final int CUSTOMER_MAX_PRODUCTS = 100;
     public static final int CUSTOMER_MIN_PRODUCTS = 0;
