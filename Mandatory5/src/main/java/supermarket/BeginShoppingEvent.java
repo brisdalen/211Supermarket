@@ -5,7 +5,9 @@
  */
 package supermarket;
 
+import eventsim.Constants;
 import eventsim.Event;
+import eventsim.EventSim;
 
 
 /**
@@ -16,15 +18,19 @@ import eventsim.Event;
 public class BeginShoppingEvent extends Event {
     Customer customer;
 
-
     public BeginShoppingEvent(Customer customer) {
         super(customer.beginShoppingTime);
         this.customer = customer;
     }
 
-
     @Override
     public Event happen() {
-        return new EndShoppingEvent(customer);
+        System.out.println(Constants.ANSI_BRIGHT_BLUE + "begin shopping time: " + EventSim.getClock());
+        //TODO: legge til LookForCheckoutEvent
+        if(customer.numProducts > 0) {
+            return new LookForCheckoutEvent(customer);
+        } else {
+            return new EndShoppingEvent(customer);
+        }
     }
 }
