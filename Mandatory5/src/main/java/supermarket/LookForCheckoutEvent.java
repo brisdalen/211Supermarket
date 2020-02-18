@@ -17,9 +17,6 @@ public class LookForCheckoutEvent extends Event {
 
         Checkout[] checkouts = customer.shop.getCheckouts();
 
-        // Hvis det skjer noe galt returneres en error event
-        Event event = ErrorEvent.getInstance(getTimeAfterLooking4Q());
-
         int i = 0;
         int smallesQIndex = i;
         int smallesQLength = checkouts[i].customers.size();
@@ -28,8 +25,7 @@ public class LookForCheckoutEvent extends Event {
 
             if(c.customers.size() == 0) {
                 // hvis ingen kø, gå direkte til å betale
-                event = new CheckoutEvent(getTimeAfterLooking4Q(), c, customer);
-                break;
+                return new CheckoutEvent(getTimeAfterLooking4Q(), c, customer);
             }
 
             if(c.customers.size() < smallesQLength) {
@@ -40,7 +36,7 @@ public class LookForCheckoutEvent extends Event {
             i++;
         }
 
-        return event;
+        return new JoinQEvent(getTimeAfterLooking4Q(), checkouts[smallesQIndex], customer);
     }
 
     private int getTimeAfterLooking4Q() {
