@@ -11,6 +11,7 @@ public class CheckoutEvent extends Event {
         //TODO: Når en person er i kassa allerede, må h@n få bli ferdig først, før du bytter kunde
         this.customer = customer;
         checkout.customer = customer;
+        checkout.removeCustomer();
         //throw new UnsupportedOperationException("Not yet implemented");
     }
 

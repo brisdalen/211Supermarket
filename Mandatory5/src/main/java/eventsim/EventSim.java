@@ -87,5 +87,7 @@ public class EventSim {
                 System.out.println("     " + qe.getClass().getSimpleName() + "@" + qe.time);
             }
         }
+
+        System.out.println("clock = " + clock);
     }
 }

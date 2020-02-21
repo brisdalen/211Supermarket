@@ -17,7 +17,7 @@ import java.util.List;
  */
 public class SuperMarket {
 
-    public static void main(String[] arts) {
+    public static void main(String[] args) {
         SuperMarket supern = new SuperMarket();
         supern.startSim();
     }
