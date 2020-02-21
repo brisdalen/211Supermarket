@@ -25,6 +25,10 @@ public abstract class Event {
         return time;
     }
 
+    public void addTime(int time) {
+        this.time += time;
+    }
+
     /**
      * Make the changes to the simulated supermarket that happens as a
      * consequence of this event.
