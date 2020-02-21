@@ -17,7 +17,10 @@ public class CheckoutEvent extends Event {
 
     @Override
     public Event happen() {
+        assert checkout.customers.peekFirst() != null;
+        int temp = checkout.customers.peekFirst().queueWaitDuration;
+        customer.checkoutDuration +=temp;
         checkout.removeCustomer();
-        return new EndShoppingEvent(customer);
+        return new ServeEvent(getTime(),this.checkout, this.customer);
     }
 }

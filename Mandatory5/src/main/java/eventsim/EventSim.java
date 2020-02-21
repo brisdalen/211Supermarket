@@ -84,7 +84,7 @@ public class EventSim {
 
             System.out.format(Constants.ANSI_RED + "Time %d: Processing %s. Event queue:\n" + Constants.ANSI_RESET, clock, e.getClass().getSimpleName()+ "@" + e.time);
             for (Event qe : eventQueue) {
-                System.out.println("     " + qe.getClass().getSimpleName() + "@" + qe.time);
+                System.out.println("     " + qe.getClass().getSimpleName() + "@ " + qe.time);
             }
         }
 

@@ -25,5 +25,4 @@ public class LookForCheckoutEvent extends Event {
         return this.getTime() + Constants.CUSTOMER_Q_LOOKING_DURATION;
     }
 
-
 }
