@@ -29,7 +29,7 @@ public class BeginShoppingEvent extends Event {
         if(customer.numProducts > 0) {
             return new LookForCheckoutEvent(customer.endShoppingTime, customer);
         } else {
-            return new EndShoppingEvent(customer);
+            return new EndShoppingEvent(customer.endShoppingTime, customer);
         }
     }
 }

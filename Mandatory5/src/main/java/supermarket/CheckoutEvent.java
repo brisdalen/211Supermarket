@@ -1,5 +1,6 @@
 package supermarket;
 
+import eventsim.Constants;
 import eventsim.Event;
 
 public class CheckoutEvent extends Event {
@@ -17,10 +18,11 @@ public class CheckoutEvent extends Event {
 
     @Override
     public Event happen() {
-        assert checkout.customers.peekFirst() != null;
-        int temp = checkout.customers.peekFirst().queueWaitDuration;
-        customer.checkoutDuration +=temp;
-        checkout.removeCustomer();
-        return new ServeEvent(getTime(),this.checkout, this.customer);
+        return new ServeEvent(getTime() + getServeTime(), this.checkout, this.customer);
+    }
+
+    private int getServeTime() {
+        // Regn ut hvor lang tid det tar før man kan betale
+        return checkout.payDuration + (customer.numProducts * checkout.prodDuration);
     }
 }

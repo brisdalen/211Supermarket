@@ -3,11 +3,11 @@ package eventsim;
 public class Constants {
     public static final int SM_NUM_CHECKOUTS = 1;
     // default value: 4
-    public static final int SM_NUM_CUSTOMERS = 2;
+    public static final int SM_NUM_CUSTOMERS = 20;
 
     public static final int CUSTOMER_MAX_PRODUCTS = 100;
     // default value: 0
-    public static final int CUSTOMER_MIN_PRODUCTS = 50;
+    public static final int CUSTOMER_MIN_PRODUCTS = 80;
 
     // TODO: trekke fra nok varer til å være innenfor max shopping time hvis antall varer * time per product blir for høyt
     public static final int CUSTOMER_MAX_SHOPPING_TIME = 10800;
@@ -18,8 +18,8 @@ public class Constants {
     public static final int CUSTOMER_Q_LOOKING_DURATION = 5;
 
     //Checkout
-    public static final int PROD_DURATION = 2;
-    public static final int PAY_DURATION = 10;
+    public static final int CHECKOUT_PROD_DURATION = 2;
+    public static final int CHECKOUT_PAY_DURATION = 10;
 
     /**
      * ANSI strings for formating print statements with color

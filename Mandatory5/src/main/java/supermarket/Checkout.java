@@ -17,9 +17,9 @@ import java.util.PriorityQueue;
  */
 public class Checkout {
     // amount of time per prouct (to scan barcode)
-    int prodDuration = Constants.PROD_DURATION;
+    int prodDuration = Constants.CHECKOUT_PROD_DURATION;
     // amount of time to pay
-    int payDuration = Constants.PAY_DURATION;
+    int payDuration = Constants.CHECKOUT_PAY_DURATION;
     //todo: blir nullpoint i constructor pga customer finnes ikke når checkout opprettes. -> fiks??
     Customer customer;
     //private int totalDuration = payDuration + prodDuration * customer.numProducts;

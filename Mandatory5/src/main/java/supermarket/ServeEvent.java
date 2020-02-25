@@ -9,12 +9,11 @@ public class ServeEvent extends Event {
         super(time);
         this.checkout = checkout;
         this.customer = customer;
-        checkout.customer = this.customer;
     }
 
     @Override
     public Event happen() {
-
-        return new EndShoppingEvent(customer);
+        checkout.customer = null;
+        return new EndShoppingEvent(getTime(), customer);
     }
 }

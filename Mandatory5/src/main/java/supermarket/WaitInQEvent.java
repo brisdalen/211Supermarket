@@ -17,13 +17,15 @@ public class WaitInQEvent extends Event {
 
     }
 
-    private int getCustomerCheckoutDuration(Customer customer) {
-        return checkout.payDuration + (checkout.prodDuration * customer.numProducts);
-    }
-
     @Override
     public Event happen() {
-        // Kalkuler tiden på alle foran i køen?
+        // Fjern kunden som går fra køen til kassa
+        checkout.removeCustomer();
+        /*assert checkout.customers.peekFirst() != null;
+        waitDuration = 0;
+        for(Customer c : checkout.customers) {
+            waitDuration += checkout.payDuration + (c.numProducts * checkout.prodDuration);
+        }*/
         return new CheckoutEvent(getTime(), checkout, customer);
     }
 }
