@@ -16,7 +16,7 @@ public class LookForCheckoutEvent extends Event {
     @Override
     public Event happen() {
         Checkout checkout = findShortestCheckoutQ(customer.shop.getCheckouts());
-        System.out.println(Constants.ANSI_BRIGHT_GREEN + "q size before = " + checkout.customers.size() + Constants.ANSI_RESET);
+        //System.out.println(Constants.ANSI_BRIGHT_GREEN + "q size before = " + checkout.customers.size() + Constants.ANSI_RESET);
         int waitTime = 0;
         for(Customer c : checkout.customers) {
             // Calculate total wait time in the qeueu
@@ -25,15 +25,15 @@ public class LookForCheckoutEvent extends Event {
         if(checkout.customer != null) {
             waitTime += getCustomerCheckoutDuration(checkout.customer);
         }
-        System.out.println(Constants.ANSI_BRIGHT_MAGENTA + " total waitTime = " + waitTime + Constants.ANSI_RESET);
+        //System.out.println(Constants.ANSI_BRIGHT_MAGENTA + " total waitTime = " + waitTime + Constants.ANSI_RESET);
         checkout.addCustomer(customer);
-        System.out.println(Constants.ANSI_BRIGHT_GREEN + "q size after = " + checkout.customers.size() + Constants.ANSI_RESET);
+        //System.out.println(Constants.ANSI_BRIGHT_GREEN + "q size after = " + checkout.customers.size() + Constants.ANSI_RESET);
         return new WaitInQEvent(getTime() + waitTime, checkout, customer);
     }
 
     private Checkout findShortestCheckoutQ(Checkout[] checkouts) {
         if(checkouts.length == 1) {
-            System.out.println(Constants.ANSI_CYAN_BACKGROUND + Constants.ANSI_BRIGHT_RED + "Checkout 0 returned" + Constants.ANSI_RESET);
+            //System.out.println(Constants.ANSI_CYAN_BACKGROUND + Constants.ANSI_BRIGHT_RED + "Checkout 0 returned" + Constants.ANSI_RESET);
             return checkouts[0];
         }
 
@@ -47,13 +47,13 @@ public class LookForCheckoutEvent extends Event {
                 smallestQIndex = i;
             }
         }
-        System.out.println(Constants.ANSI_CYAN_BACKGROUND + Constants.ANSI_BRIGHT_RED + "Checkout " + smallestQIndex + " returned" + Constants.ANSI_RESET);
+        //System.out.println(Constants.ANSI_CYAN_BACKGROUND + Constants.ANSI_BRIGHT_RED + "Checkout " + smallestQIndex + " returned" + Constants.ANSI_RESET);
         return checkouts[smallestQIndex];
     }
 
     private int getCustomerCheckoutDuration(Customer customer) {
         int waitTime = Constants.CHECKOUT_PAY_DURATION + (Constants.CHECKOUT_PROD_DURATION * customer.numProducts);
-        System.out.println(Constants.ANSI_BRIGHT_MAGENTA + "waitTime = " + waitTime + Constants.ANSI_RESET);
+        //System.out.println(Constants.ANSI_BRIGHT_MAGENTA + "waitTime = " + waitTime + Constants.ANSI_RESET);
         return waitTime;
     }
 

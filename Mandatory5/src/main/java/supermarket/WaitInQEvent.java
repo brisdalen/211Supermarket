@@ -21,11 +21,6 @@ public class WaitInQEvent extends Event {
     public Event happen() {
         // Fjern kunden som går fra køen til kassa
         checkout.removeCustomer();
-        /*assert checkout.customers.peekFirst() != null;
-        waitDuration = 0;
-        for(Customer c : checkout.customers) {
-            waitDuration += checkout.payDuration + (c.numProducts * checkout.prodDuration);
-        }*/
         return new CheckoutEvent(getTime(), checkout, customer);
     }
 }
