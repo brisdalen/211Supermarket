@@ -15,7 +15,7 @@ public class LookForCheckoutEvent extends Event {
 
     @Override
     public Event happen() {
-        Checkout checkout = customer.shop.getCheckouts()[0];
+        Checkout checkout = findShortestCheckoutQ(customer.shop.getCheckouts());
         System.out.println(Constants.ANSI_BRIGHT_GREEN + "q size before = " + checkout.customers.size() + Constants.ANSI_RESET);
         int waitTime = 0;
         for(Customer c : checkout.customers) {
@@ -29,6 +29,26 @@ public class LookForCheckoutEvent extends Event {
         checkout.addCustomer(customer);
         System.out.println(Constants.ANSI_BRIGHT_GREEN + "q size after = " + checkout.customers.size() + Constants.ANSI_RESET);
         return new WaitInQEvent(getTime() + waitTime, checkout, customer);
+    }
+
+    private Checkout findShortestCheckoutQ(Checkout[] checkouts) {
+        if(checkouts.length == 1) {
+            System.out.println(Constants.ANSI_CYAN_BACKGROUND + Constants.ANSI_BRIGHT_RED + "Checkout 0 returned" + Constants.ANSI_RESET);
+            return checkouts[0];
+        }
+
+        int smallestQ = 255;
+        int smallestQIndex = 0;
+
+        for(int i = 0; i < checkouts.length; i++) {
+            int size = checkouts[i].customers.size();
+            if(size < smallestQ) {
+                smallestQ = size;
+                smallestQIndex = i;
+            }
+        }
+        System.out.println(Constants.ANSI_CYAN_BACKGROUND + Constants.ANSI_BRIGHT_RED + "Checkout " + smallestQIndex + " returned" + Constants.ANSI_RESET);
+        return checkouts[smallestQIndex];
     }
 
     private int getCustomerCheckoutDuration(Customer customer) {

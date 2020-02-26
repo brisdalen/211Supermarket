@@ -1,13 +1,13 @@
 package eventsim;
 
 public class Constants {
-    public static final int SM_NUM_CHECKOUTS = 1;
+    public static final int SM_NUM_CHECKOUTS = 3;
     // default value: 4
-    public static final int SM_NUM_CUSTOMERS = 20;
+    public static final int SM_NUM_CUSTOMERS = 200;
 
     public static final int CUSTOMER_MAX_PRODUCTS = 100;
     // default value: 0
-    public static final int CUSTOMER_MIN_PRODUCTS = 80;
+    public static final int CUSTOMER_MIN_PRODUCTS = 0;
 
     // TODO: trekke fra nok varer til å være innenfor max shopping time hvis antall varer * time per product blir for høyt
     public static final int CUSTOMER_MAX_SHOPPING_TIME = 10800;
