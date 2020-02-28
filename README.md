@@ -9,7 +9,6 @@ Our simulation model consists of the six events (in order): BeginShoppingEvent, 
 
 **The LookForCheckoutEvent** is the next event in the model. It takes the current time and the Customer with the highest priorty in the Priorty Queue. During the LookForCheckoutEvent the current customer finds the shortest queue by checking whether there is more than one checkout available, then comparing which checkout has the shortest line of customers. The customer then picks a line and additional wait-time is added to the customers shoppingtime - which is based of off the current customers ahead in the checkoutline. Lastly it adds the current customer to a queue and returns ad new WaitInQ event. 
 
-
 **WaitInQEvent** takes the current time, checkout and customer then removes the first customer in the queue and returns a new Checkout Event with the current time, checkout and customer.
 
 **CheckoutEvent** takes the current time, checkout and customer and adds a payduration constant (number of products * checkout.duration) to the current time of the customer before returning a serve event.
@@ -23,3 +22,7 @@ In WaitInQEvent, the value of every customers scan- and payment time is calculat
 
 ## Continued development
 If we were to continue development of this project we would like to work on the following things:
+- Statistics at the end of simulation, with options to show average queue time, longest queue time, and so on.
+- Different types of customers with different shopping times, different time per product and so on. These could be children, eldery, teens and so on.
+- A simple GUI instead of having to manually change values in the Constants.java file.
+- Realistic and relevant random events like cleanups, crying children, or other humorous events like shoplifts, power shortage, etc.
