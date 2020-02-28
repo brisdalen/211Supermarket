@@ -4,7 +4,7 @@ public class Constants {
     // default value 2
     public static final int SM_NUM_CHECKOUTS = 2;
     // default value: 50
-    public static final int SM_NUM_CUSTOMERS = 50;
+    public static final int SM_NUM_CUSTOMERS = 20;
     // default value: 200
     public static final int CUSTOMER_MAX_PRODUCTS = 200;
     // default value: 0 - Men da oppstår sjeldent ingen kø

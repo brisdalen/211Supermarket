@@ -5,6 +5,7 @@
  */
 package eventsim;
 
+import java.text.DecimalFormat;
 import java.util.List;
 import java.util.PriorityQueue;
 import java.util.Random;
@@ -87,7 +88,8 @@ public class EventSim {
                 System.out.println("     " + qe.getClass().getSimpleName() + "@" + qe.time);
             }
         }
-
-        System.out.println(Constants.ANSI_GREEN + "Final clock = " + clock + Constants.ANSI_RESET);
+        DecimalFormat twoDecimals = new DecimalFormat("#.##");
+        String resultMins = twoDecimals.format((double)clock/60);
+        System.out.println(Constants.ANSI_GREEN + "Final clock = " + resultMins + " minutes (" + clock + " seconds)" + Constants.ANSI_RESET);
     }
 }
