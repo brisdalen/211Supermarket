@@ -18,16 +18,18 @@ import eventsim.EventSim;
  */
 public class EndShoppingEvent extends Event {
     Customer customer;
+    int leaveTime;
 
     public EndShoppingEvent(int time, Customer customer) {
         super(time);
         this.customer = customer;
+        this.leaveTime = time;
     }
 
     @Override
     public Event happen() {
         System.out.println(Constants.ANSI_BRIGHT_BLUE + "customer leaving @ time: " + EventSim.getClock());
-        customer.leaveTime = customer.checkoutTime + customer.checkoutDuration;
+        customer.leaveTime = leaveTime;
         return null;
     }
 
