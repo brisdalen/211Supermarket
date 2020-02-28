@@ -19,8 +19,8 @@ import eventsim.EventSim;
 public class EndShoppingEvent extends Event {
     Customer customer;
 
-    public EndShoppingEvent(Customer customer) {
-        super(EventSim.getClock() + customer.shoppingDuration);
+    public EndShoppingEvent(int time, Customer customer) {
+        super(time);
         this.customer = customer;
     }
 

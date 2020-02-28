@@ -1,12 +1,14 @@
 package eventsim;
 
 public class Constants {
-    public static final int SM_NUM_CHECKOUTS = 1;
-    // default value: 4
-    public static final int SM_NUM_CUSTOMERS = 3;
-
-    public static final int CUSTOMER_MAX_PRODUCTS = 100;
-    public static final int CUSTOMER_MIN_PRODUCTS = 0;
+    // default value 2
+    public static final int SM_NUM_CHECKOUTS = 2;
+    // default value: 50
+    public static final int SM_NUM_CUSTOMERS = 20;
+    // default value: 200
+    public static final int CUSTOMER_MAX_PRODUCTS = 200;
+    // default value: 0 - Men da oppstår sjeldent ingen kø
+    public static final int CUSTOMER_MIN_PRODUCTS = 40;
 
     // TODO: trekke fra nok varer til å være innenfor max shopping time hvis antall varer * time per product blir for høyt
     public static final int CUSTOMER_MAX_SHOPPING_TIME = 10800;
@@ -17,8 +19,8 @@ public class Constants {
     public static final int CUSTOMER_Q_LOOKING_DURATION = 5;
 
     //Checkout
-    public static final int PROD_DURATION = 2;
-    public static final int PAY_DURATION = 10;
+    public static final int CHECKOUT_PROD_DURATION = 2;
+    public static final int CHECKOUT_PAY_DURATION = 10;
 
     /**
      * ANSI strings for formating print statements with color

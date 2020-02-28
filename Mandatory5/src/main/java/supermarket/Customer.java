@@ -41,16 +41,16 @@ public class Customer {
         name = "Cust" + i;
         beginShoppingTime = i;
 
-        System.out.println("name = " + name);
+        //System.out.println("name = " + name);
 
         numProducts = EventSim.nextInt(minNumOfProducts, maxNumOfProducts);
-        System.out.println("[Customer]number of products: " + numProducts);
+        //System.out.println("[Customer]number of products: " + numProducts);
 
         recalculateTimes();
     }
 
     public void changeNumOfProdcuts(int n) {
-        System.out.println("[Customer]changeNumOfProdcuts");
+        //System.out.println("[Customer]changeNumOfProdcuts");
         numProducts = n;
         recalculateTimes();
     }
@@ -58,8 +58,8 @@ public class Customer {
     private void recalculateTimes() {
         shoppingDuration = numProducts * Constants.TIME_PER_PRODUCT;
         endShoppingTime = beginShoppingTime + shoppingDuration;
-        System.out.println("[Customer]shopping duration: " + shoppingDuration);
-        System.out.println("[Customer]end shopping time: " + endShoppingTime);
+        //System.out.println("[Customer]shopping duration: " + shoppingDuration);
+        //System.out.println("[Customer]end shopping time: " + endShoppingTime);
     }
 
 }
