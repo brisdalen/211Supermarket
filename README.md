@@ -17,5 +17,8 @@ The penultimate event is the ServeEvent, which
 
 Finally the customer enters a EndShoppingEvent. This event simply displays when a customer leaves, and assigns the time to the customer's leaveTime. 
 
+## Continued development
+If we were to continue development of this project we would like to work on the following things:
+
 ## Known bugs
 In WaitInQEvent, the value of every customers scan- and payment time is calculated, and added to the event before it starts. One problem seems to be that one's own time is calculated and added to the waittime, which should be ignored.
